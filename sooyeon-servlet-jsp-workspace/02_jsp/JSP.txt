@@ -18,9 +18,12 @@
    JSP로 작업을 하지만 내부적으로 Servlet클래스(xxx_jsp.java)로 변환되어 실행됨
    xxx.jsp  ---[변환(translate)]---▶  xxx_jsp.java  ---[컴파일(compile)]---▶  xxx_jsp.class  ---[실행(run)]---▶  클라이언트에게 보여짐
 5. JSP 동적 구성요소
+
+
+
    1) Scripting Element (스크립트 요소)
        → JSP 페이지 내에 자바 코드를 삽입할 수 있도록 해주는 요소
-       → Declaration : <%! 선언문 --%>
+       → Declaration : <%! 선언문 %>
        → Scriptlet   : <%   코드   %>
        → Expression  : <%= 출력값 %>
    2) Directive (지시어)
@@ -31,6 +34,9 @@
    3) Implicit Object (내장객체)
        → JSP 컨테이너가 자동으로 제공하는 객체, 별도의 선언 없이 바로 사용 가능
        → pageContext, request, session, application, response, out, ..
+
+
+
    4) Standard Action Tag (표준 액션 태그)
        → XML 기반 태그
        → JSP 에서 다른 페이지를 포함하거나 이동할 때 등 사용 가능
@@ -80,22 +86,26 @@
 ------------------------------------------------------------------------------------------------
 
 ## JSP에서 페이지 가공시 사용할 데이터 담기 => JSP 내장객체 ##
-1. application (ServletContext)
+1. application (ServletContext) -------------------------잘안씀
    1) 한 애플리케이션당 단 1개 존재하는 객체
    2) 애플리케이션에 유지할 데이터 담기
    3) 애플리케이션 종료 전까지 애플리케이션 전역에서 데이터 사용 가능
-2. session (HttpSession)
+2. session (HttpSession)---------------씀
    1) 한 브라우저당 1개 존재하는 객체
    2) 브라우저에 유지할 데이터 담기
    3) 브라우저 종료 전|서버 종료 전까지 jsp/servlet 단에서 데이터 사용 가능
-3. request (HttpServletRequest)
+    -> 사용자가 로그인해서 세션이유지되는동안 데이터가 살아있음
+3. request (HttpServletRequest)---------------------------많이씀
    1) 한 요청당 1개 존재하는 객체
    2) 해당 요청에 대한 응답페이지에 사용할 데이터 담기
    3) forward에 의해 해당 request가 전달된 Servlet, JSP에서만 데이터 사용 가능
+    -> 하나의요청에서만 사용 가능 (forward해도 유지)
 4. pageContext
    1) 한 jsp당 1개 존재하는 객체
    2) 해당 페이지에 필요한 데이터를 해당 페이지에서 담을 수 있음
    3) jsp에서 담고 해당 jsp에서만 사용 가능
+
+
 
 * Serlvet에서 해당 객체 접근 방법
 1) ServletContext     : request.getServletContext()

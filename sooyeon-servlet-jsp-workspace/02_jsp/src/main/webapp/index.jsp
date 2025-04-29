@@ -1,13 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
-<head>
-    <title>JSP - Hello World</title>
-</head>
-<body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
-</body>
+  <head>
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>JSP</h1>
+
+    <h2>1. Script Element, Directive, 내장객체 확인</h2>
+    <a href="/jsp/tag-element?no=1">정보 조회</a>
+  
+  </body>
 </html>
