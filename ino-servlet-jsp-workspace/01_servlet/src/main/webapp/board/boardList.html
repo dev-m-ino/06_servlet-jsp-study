@@ -12,5 +12,12 @@
   <li>bd3</li>
   <li>bd4</li>
 </ul>
+<button id="regist_btn">글 작성</button>
+<script>
+  document.getElementById("regist_btn").addEventListener('click', (evt) => {
+    // location.href = 'boardWrite.html'; 잘못된 예시
+    location.href = '/servlet/board/registform';
+  });
+</script>
 </body>
 </html>
